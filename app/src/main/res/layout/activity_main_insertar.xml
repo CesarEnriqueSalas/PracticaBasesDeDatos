@@ -1,41 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_Insertar">
+    tools:context=".MainActivity_Insertar"
+    android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textoInsetar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TextoInsetar"
-        android:textSize="20dp"
-        android:layout_centerHorizontal="true"/>
+        android:text="@string/textoInsertar"
+        android:textSize="25dp"/>
 
     <RadioGroup
-        android:id="@+id/opciones"
-        android:layout_below="@id/textoInsetar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RadioButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:text="@string/opcionUsuario"
+            android:textSize="20dp"/>
 
         <RadioButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/opcionCodeIsoPais"
+            android:textSize="20dp"/>
 
         <RadioButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/opcionPais"
+            android:textSize="20dp"/>
 
         <RadioButton
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@string/opcionCiudad"
+            android:textSize="20dp"/>
 
     </RadioGroup>
 
-</RelativeLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textSize="20dp"
+        android:text="@string/botonVolver"/>
+
+</LinearLayout>

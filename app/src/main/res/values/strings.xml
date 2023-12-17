@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">PracticaBasesDeDatos</string>
     <string name="texto1">¿Que quieres hacer?</string>
     <string name="insertar">Insertar</string>
@@ -10,4 +11,17 @@
     <string name="ventanaBorrar">Borrar</string>
     <string name="ventanaListar">Listar</string>
     <string name="TextoInsetar">¿Donde quieres Insertar?</string>
+
+    <string name="opcionUsuario">Tabla_Usuario</string>
+    <string name="opcionCodeIsoPais">Tabla_CodeIsoPais</string>
+    <string name="opcionPais">Tabla_Pais</string>
+    <string name="opcionCiudad">Tabla_Ciudad</string>
+
+    <string name="textoInsertar">¿En que tabla quieres Insertar?</string>
+    <string name="textoActualizar">¿En que tabla quieres actualizar?</string>
+    <string name="textoBorrar">¿En que tabla quieres borrar?</string>
+    <string name="textoListar">¿Que tabla quieres obtener su información?</string>
+
+    <string name="botonVolver">Regresar</string>
+
 </resources>
