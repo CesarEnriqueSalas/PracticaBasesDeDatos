@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">PracticaBasesDeDatos</string>
+    <string name="texto1">¿Que quieres hacer?</string>
+    <string name="insertar">Insertar</string>
+    <string name="actualizar">Actualizar</string>
+    <string name="borrar">Borrar</string>
+    <string name="listar">Listar</string>
+    <string name="ventanaInsert">Insertar</string>
+    <string name="ventanaActualizar">Actualizar</string>
+    <string name="ventanaBorrar">Borrar</string>
+    <string name="ventanaListar">Listar</string>
+    <string name="TextoInsetar">¿Donde quieres Insertar?</string>
+</resources>
