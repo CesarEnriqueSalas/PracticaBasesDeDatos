@@ -7,8 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteHelper extends SQLiteOpenHelper {
 
-    String sqlCreateUserTable = "CREATE TABLE Usuario (usuarioId NUMERIC, nombre TEXT, apellido TEXT, nombreUsuario TEXT ,email TEXT)";
-    String sqlCreateCodeIsoPaisTable = "CREATE TABLE CodeIsoPais (codigoIsoPais TEXT , usuarioId NUMERIC, paisId Numeric)";
+    String sqlCreateUserTable = "CREATE TABLE Usuario (usuarioId NUMERIC, nombre TEXT, apellido TEXT, nombreUsuario TEXT ,email TEXT, " +
+            "codigoIsoPais TEXT)";
+    String sqlCreateCodeIsoPaisTable = "CREATE TABLE CodeIsoPais (codigoIsoPais TEXT , paisId Numeric)";
     String sqlCreatePaisTable = "CREATE TABLE Pais (paisId NUMERIC, nombre TEXT)";
     String sqlCreateCiudadTable = "CREATE TABLE Ciudad (ciudadId NUMERIC, nombre TEXT, paisId NUMERIC)";
 
