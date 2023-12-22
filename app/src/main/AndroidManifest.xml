@@ -13,16 +13,52 @@
         android:theme="@style/Theme.PracticaBasesDeDatos"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity_Listar"
+            android:name=".activitiespais.MainActivityPaisListar"
             android:exported="false" />
         <activity
-            android:name=".MainActivity_Borrar"
+            android:name=".activitiespais.MainActivityPaisBorrar"
             android:exported="false" />
         <activity
-            android:name=".MainActivity_Actualizar"
+            android:name=".activitiescodeisopais.MainActivityCodeIsoPaisListar"
             android:exported="false" />
         <activity
-            android:name=".MainActivity_Insertar"
+            android:name=".activitiescodeisopais.MainActivityCodeIsoPaisBorrar"
+            android:exported="false" />
+        <activity
+            android:name=".activitiesciudad.MainActivityCiudadListar"
+            android:exported="false" />
+        <activity
+            android:name=".activitiesciudad.MainActivityCiudadBorrar"
+            android:exported="false" />
+        <activity
+            android:name=".activitiesusuarios.MainActivityUsuarioListar"
+            android:exported="false" />
+        <activity
+            android:name=".activitiesusuarios.MainActivityUsuarioBorrar"
+            android:exported="false" />
+        <activity
+            android:name=".activitiescodeisopais.MainActivityCodeIsoPaisInsertarActualizar"
+            android:exported="false" />
+        <activity
+            android:name=".activitiesciudad.MainActivityCiudadInsertarActualizar"
+            android:exported="false" />
+        <activity
+            android:name=".activitiespais.MainActivityPaisInsertarActualizar"
+            android:exported="false" />
+        <activity
+            android:name=".activitiesusuarios.MainActivityUsuarioInsertarActualizar"
+            android:exported="false" />
+        <activity
+            android:name=".activitylistar.MainActivity_Tablas"
+            android:exported="false" />
+        <activity
+            android:name=".activityborrar.MainActivity_Borrar"
+            android:exported="false" />
+        <activity
+            android:name=".activityactualizar.MainActivity_Actualizar"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity_Tablas"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

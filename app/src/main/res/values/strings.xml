@@ -22,6 +22,22 @@
     <string name="textoBorrar">¿En que tabla quieres borrar?</string>
     <string name="textoListar">¿Que tabla quieres obtener su información?</string>
 
+    <string name="textoTablaUsuarioInsertar">Datos a insetar en la Tabla Usuario</string>
+    <string name="textoTablaUsuarioActualizar">Datos actualizables en la Tabla Usuario</string>
+    <string name="textoTablaUsuarioBorrar">¿Que usuario quieres borrar?</string>
+
+    <string name="textoTablaPaisInsertar">Datos a insetar en la Tabla Pais</string>
+    <string name="textoTablaPaisActualizar">Datos actualizables en la Tabla Pais</string>
+    <string name="textoTablaPaisBorrar">¿Que pais quieres borrar?</string>
+
+    <string name="textoTablaCiudadInsertar">Datos a insetar en la Tabla Ciudad</string>
+    <string name="textoTablaCiudadActualizar">Datos actualizables en la Tabla Ciudad</string>
+    <string name="textoTablaCiudadBorrar">¿Que ciudad quieres borrar?</string>
+
+    <string name="textoTablaCodeIsoInsertar">Datos a insetar en la Tabla CodeIsoPais</string>
+    <string name="textoTablaCodeIsoActualizar">Datos actualizables en la Tabla CodeIsoPais</string>
+    <string name="textoTablaCodeIsoBorrar">¿Que CodeIsoPais quieres borrar?</string>
+
     <string name="botonVolver">Regresar</string>
 
 </resources>

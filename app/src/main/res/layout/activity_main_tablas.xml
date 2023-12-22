@@ -4,51 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity_Insertar"
+    tools:context=".MainActivity_Tablas"
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/textoPregunta"
+        android:layout_marginTop="150dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/textoInsertar"
-        android:textSize="25dp"/>
+        android:textSize="30dp"/>
 
     <RadioGroup
+        android:id="@+id/opciones"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RadioButton
+            android:id="@+id/tablaUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/opcionUsuario"
-            android:textSize="20dp"/>
+            android:textSize="30dp"/>
 
         <RadioButton
+            android:id="@+id/tablaCodeIsoPais"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/opcionCodeIsoPais"
-            android:textSize="20dp"/>
+            android:textSize="30dp"/>
 
         <RadioButton
+            android:id="@+id/tablaPais"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/opcionPais"
-            android:textSize="20dp"/>
+            android:textSize="30dp"/>
 
         <RadioButton
+            android:id="@+id/tablaCiudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/opcionCiudad"
-            android:textSize="20dp"/>
+            android:textSize="30dp"/>
 
     </RadioGroup>
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/Regresar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:text="@string/botonVolver"
         android:onClick="onPulsameRegresar"/>
+
 
 </LinearLayout>

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/texto1"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp"/>
 
@@ -25,32 +25,36 @@
             android:id="@+id/botonInsertar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="165dp"
+            android:layout_marginLeft="145dp"
             android:text="@string/insertar"
+            android:textSize="30dp"
             android:onClick="onPulsameInsertar"/>
 
         <Button
             android:id="@+id/botonActualizar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="155dp"
+            android:layout_marginLeft="125dp"
             android:text="@string/actualizar"
+            android:textSize="30dp"
             android:onClick="onPulsameActualizar"/>
 
         <Button
             android:id="@+id/botonBorrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="150dp"
             android:text="@string/borrar"
+            android:textSize="30dp"
             android:onClick="onPulsameBorrar"/>
 
         <Button
             android:id="@+id/botonListar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="150dp"
             android:text="@string/listar"
+            android:textSize="30dp"
             android:onClick="onPulsameListar"/>
 
     </LinearLayout>

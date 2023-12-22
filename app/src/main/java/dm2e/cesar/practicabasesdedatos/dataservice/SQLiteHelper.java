@@ -1,4 +1,4 @@
-package dm2e.cesar.practicabasesdedatos;
+package dm2e.cesar.practicabasesdedatos.dataservice;
 
 import android.content.ContentValues;
 import android.content.Context;
