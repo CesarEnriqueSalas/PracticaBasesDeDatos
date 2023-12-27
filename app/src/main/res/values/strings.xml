@@ -17,26 +17,63 @@
     <string name="opcionPais">Tabla_Pais</string>
     <string name="opcionCiudad">Tabla_Ciudad</string>
 
+    <!---Pregunta de que va ha realizar el usuario-->
     <string name="textoInsertar">¿En que tabla quieres Insertar?</string>
     <string name="textoActualizar">¿En que tabla quieres actualizar?</string>
     <string name="textoBorrar">¿En que tabla quieres borrar?</string>
     <string name="textoListar">¿Que tabla quieres obtener su información?</string>
 
+    <!--Texto Tabla Usuario-->
     <string name="textoTablaUsuarioInsertar">Datos a insetar en la Tabla Usuario</string>
     <string name="textoTablaUsuarioActualizar">Datos actualizables en la Tabla Usuario</string>
     <string name="textoTablaUsuarioBorrar">¿Que usuario quieres borrar?</string>
+    <string name="textoTablaUsuarioListar">Listando la Tabla Usuarios</string>
 
+    <string name="textoActuUsuario">¿Que usuario quieres actualizar?</string>
+    <string name="textoInserUsuario">¿Que usuario quieres insertar?</string>
+    <string name="textoBorrarUsuario">¿Que usuario quieres borrar?</string>
+    
+    <string name="idUsuario">Inserte el Id del Usuario</string>
+    <string name="nombreUsuario">Inserte el nombre del Usuario</string>
+    <string name="apellidoUsuario">Inserte el apellido del Usuario</string>
+    <string name="nombreAPPUsuario">Inserte el nombre en la aplicación del Usuario</string>
+    <string name="emailUsuario">Inserte el email del Usuario</string>
+    <string name="codigoIsoUsuario">Inserte el codeIso del pais del Usuario</string>
+    
+    <!--Texto Tabla Pais-->
     <string name="textoTablaPaisInsertar">Datos a insetar en la Tabla Pais</string>
     <string name="textoTablaPaisActualizar">Datos actualizables en la Tabla Pais</string>
     <string name="textoTablaPaisBorrar">¿Que pais quieres borrar?</string>
+    <string name="textoTablaPaisListar">Listando la Tabla Paises</string>
 
+    <string name="textoActuPais">¿Que pais quieres actualizar?</string>
+    <string name="textoInserPais">¿Que pais quieres insertar?</string>
+    <string name="textoBorrarPais">¿Que pais quieres borrar?</string>
+    <string name="idPais">Inserte el Id del Pais</string>
+    <string name="nombrePais">Inserte el nombre del Pais</string>
+
+    <!--Texto Tabla Ciudad-->
     <string name="textoTablaCiudadInsertar">Datos a insetar en la Tabla Ciudad</string>
     <string name="textoTablaCiudadActualizar">Datos actualizables en la Tabla Ciudad</string>
     <string name="textoTablaCiudadBorrar">¿Que ciudad quieres borrar?</string>
+    <string name="textoTablaCiudadListrar">Listando la Tabla Ciudades</string>
 
+    <string name="textoActuCiudad">¿Que ciudad quieres actualizar en la tabla Ciudad?</string>
+    <string name="textoInsertCiudad">¿Que ciudad quieres insertar en la tabla Ciudad?</string>
+    <string name="textoBorrarCiudad">¿Que ciudad quieres borrar en la tabla Ciudad?</string>
+    <string name="idCiudad">Inserte el id de la Ciudad</string>
+    <string name="nombreCiudad">Inserte el nombre de la Ciudad</string>
+
+    <!--Texto Tabla CodeIsoPais-->
     <string name="textoTablaCodeIsoInsertar">Datos a insetar en la Tabla CodeIsoPais</string>
     <string name="textoTablaCodeIsoActualizar">Datos actualizables en la Tabla CodeIsoPais</string>
     <string name="textoTablaCodeIsoBorrar">¿Que CodeIsoPais quieres borrar?</string>
+    <string name="textoTablaCodeIsoListar">Listando la Tabla CodeIsoPais</string>
+
+    <string name="textoActuCodeIsoPais">¿Que valor quieres cambiar en la tabla CodeIsoPais?</string>
+    <string name="textoInsertCodeIsoPais">¿Que valor quieres insertar en la tabla CodeIsoPais?</string>
+    <string name="textoBorrarCodeIsoPais">¿Que valor quieres borrar en la tabla CodeIsoPais?</string>
+    <string name="idCodeIsoPais">Inserte el Id del Codigo Iso del Pais</string>
 
     <string name="botonVolver">Regresar</string>
 

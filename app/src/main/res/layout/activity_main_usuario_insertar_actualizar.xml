@@ -1,18 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activitiesusuarios.MainActivityUsuarioInsertarActualizar">
 
-    <Button
-        android:id="@+id/Regresar"
+    <TextView
+        android:id="@+id/texto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:textSize="30dp"
-        android:text="@string/botonVolver"
-        android:onClick="onPulsameRegresar"/>
+        android:textSize="30dp"/>
 
-</LinearLayout>
+    <EditText
+        android:layout_below="@id/texto"
+        android:id="@+id/usuarioId"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/idUsuario"/>
+
+    <EditText
+        android:id="@+id/usuarioNombre"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usuarioId"
+        android:hint="@string/nombreUsuario"/>
+
+    <EditText
+        android:id="@+id/usuario"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usuarioNombre"
+        android:hint="@string/nombreAPPUsuario"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/usuario"
+        android:hint="@string/emailUsuario"/>
+
+    <EditText
+        android:id="@+id/codigoIsoUsuario"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/email"
+        android:hint="@string/codigoIsoUsuario"/>
+
+    <TextView
+        android:id="@+id/texto2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/codigoIsoUsuario"
+        android:layout_above="@id/layout"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+    <TableLayout
+        android:id="@+id/layout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/Regresar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onPulsameRegresar"
+                android:text="@string/botonVolver"
+                android:textSize="30dp" />
+
+            <Button
+                android:id="@+id/accion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="30dp"/>
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
