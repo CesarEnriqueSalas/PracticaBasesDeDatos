@@ -14,9 +14,10 @@
         android:textSize="30dp"/>
 
     <TextView
-        android:layout_below="@id/textoListar"
+        android:id="@+id/listaPais"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/textoListar"
         android:layout_above="@id/Regresar" />
     <Button
         android:id="@+id/Regresar"

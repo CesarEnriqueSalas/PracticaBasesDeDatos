@@ -7,14 +7,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 public class SQLiteHelper extends SQLiteOpenHelper {
 
-    String sqlCreateUserTable = "CREATE TABLE Usuario (usuarioId NUMERIC, nombre TEXT, apellido TEXT, nombreUsuario TEXT ,email TEXT, " +
+    String sqlCreateUserTable = "CREATE TABLE Usuario (usuarioId INTEGER PRIMARY KEY, nombre TEXT, apellido TEXT, nombreUsuario TEXT ,email TEXT, " +
             "codigoIsoPais TEXT)";
-    String sqlCreateCodeIsoPaisTable = "CREATE TABLE CodeIsoPais (codigoIsoPais TEXT , paisId Numeric)";
-    String sqlCreatePaisTable = "CREATE TABLE Pais (paisId NUMERIC, nombre TEXT)";
-    String sqlCreateCiudadTable = "CREATE TABLE Ciudad (ciudadId NUMERIC, nombre TEXT, paisId NUMERIC)";
+    String sqlCreateCodeIsoPaisTable = "CREATE TABLE CodeIsoPais (codigoIsoPais TEXT PRIMARY KEY, paisId NUMERIC)";
+    String sqlCreatePaisTable = "CREATE TABLE Pais (paisId INTEGER PRIMARY KEY, nombre TEXT)";
+    String sqlCreateCiudadTable = "CREATE TABLE Ciudad (ciudadId NUMERIC PRIMARY KEY, nombre TEXT, paisId NUMERIC)";
 
-    public SQLiteHelper(Context context,  String name,  SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+
+    public SQLiteHelper(Context context, int version) {
+        super(context, "BaseDeDatosMoviles", null, version);
     }
 
     @Override
@@ -56,13 +57,87 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         return db.delete("Usuario", "usuarioId=?", new String[]{String.valueOf(usuarioId)});
     }
 
-    public Cursor obtenerTodosLosUsuarios() {
+    public Cursor listarTodosUsuarios() {
         SQLiteDatabase db = this.getReadableDatabase();
         return db.query("Usuario", null, null, null, null, null, null);
     }
 
-    public Cursor consultarDatosVariasTablas() {
+    public long insertarCodeIsoPais(String codigoIsoPais, int paisId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("codigoIsoPais", codigoIsoPais);
+        values.put("paisId", paisId);
+        return db.insert("CodeIsoPais", null, values);
+    }
+
+    public int actualizarCodeIsoPais(String codigoIsoPais, int nuevoPaisId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("paisId", nuevoPaisId);
+        return db.update("CodeIsoPais", values, "codigoIsoPais=?", new String[]{codigoIsoPais});
+    }
+
+    public int borrarCodeIsoPais(String codigoIsoPais) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("CodeIsoPais", "codigoIsoPais=?", new String[]{codigoIsoPais});
+    }
+
+    public Cursor obtenerTodosLosCodeIsoPais() {
         SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery("SELECT * FROM Usuario", null);
+        return db.query("CodeIsoPais", null, null, null, null, null, null);
+    }
+
+    // Métodos para la tabla Pais
+    public long insertarPais(int paisId, String nombre) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("paisId", paisId);
+        values.put("nombre", nombre);
+        return db.insert("Pais", null, values);
+    }
+
+    public int actualizarPais(int paisId, String nuevoNombre) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("nombre", nuevoNombre);
+        return db.update("Pais", values, "paisId=?", new String[]{String.valueOf(paisId)});
+    }
+
+    public int borrarPais(int paisId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("Pais", "paisId=?", new String[]{String.valueOf(paisId)});
+    }
+
+    public Cursor obtenerTodosLosPaises() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query("Pais", null, null, null, null, null, null);
+    }
+
+    // Métodos para la tabla Ciudad
+    public long insertarCiudad(int ciudadId, String nombre, int paisId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("ciudadId", ciudadId);
+        values.put("nombre", nombre);
+        values.put("paisId", paisId);
+        return db.insert("Ciudad", null, values);
+    }
+
+    public int actualizarCiudad(int ciudadId, String nuevoNombre, int nuevoPaisId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("nombre", nuevoNombre);
+        values.put("paisId", nuevoPaisId);
+        return db.update("Ciudad", values, "ciudadId=?", new String[]{String.valueOf(ciudadId)});
+    }
+
+    public int borrarCiudad(int ciudadId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("Ciudad", "ciudadId=?", new String[]{String.valueOf(ciudadId)});
+    }
+
+    public Cursor obtenerTodasLasCiudades() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.query("Ciudad", null, null, null, null, null, null);
     }
 }
