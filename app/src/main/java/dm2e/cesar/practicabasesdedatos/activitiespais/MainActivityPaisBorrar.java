@@ -62,7 +62,7 @@ public class MainActivityPaisBorrar extends AppCompatActivity {
                 }
 
             } else {
-                Toast.makeText(this, "El id del usuario esta vacio", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "El id del pais esta vacio", Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
             Toast.makeText(this, "Error al abrir la base de datos", Toast.LENGTH_LONG).show();

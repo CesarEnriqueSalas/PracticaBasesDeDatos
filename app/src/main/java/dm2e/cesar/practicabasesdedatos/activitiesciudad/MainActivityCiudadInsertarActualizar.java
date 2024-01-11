@@ -170,8 +170,6 @@ public class MainActivityCiudadInsertarActualizar extends AppCompatActivity {
                     Toast.makeText(this, "Debes llenar todos  los campos", Toast.LENGTH_LONG).show();
                 }
 
-                Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_LONG).show();
-
             } else {
                 Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_LONG).show();
             }

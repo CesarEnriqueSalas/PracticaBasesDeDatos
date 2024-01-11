@@ -141,7 +141,7 @@ public class MainActivityCodeIsoPaisInsertarActualizar extends AppCompatActivity
                 registro.put("codigoIsoPais", codeIssoPaisNombre);
                 registro.put("paisId", paisIdInt);
 
-                int cantidad = baseDeDatos.update("CodeIsoPais", registro, "codeID=?", new String[]{String.valueOf(id)});
+                int cantidad = baseDeDatos.update("CodeIsoPais", registro, "codeID=" + id, null);
 
                 codeIsoPaisId.setText("");
                 codeIsoPaisNombre.setText("");
@@ -152,6 +152,7 @@ public class MainActivityCodeIsoPaisInsertarActualizar extends AppCompatActivity
                 } else {
                     Toast.makeText(this, "No se encontró el CodeIsoPais para actualizar", Toast.LENGTH_LONG).show();
                 }
+
             } else {
                 Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_LONG).show();
             }
