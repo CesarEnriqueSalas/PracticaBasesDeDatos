@@ -2,10 +2,13 @@ package dm2e.cesar.practicabasesdedatos.activitiespais;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
+import dm2e.cesar.practicabasesdedatos.MainActivity_Tablas;
 import dm2e.cesar.practicabasesdedatos.R;
 import dm2e.cesar.practicabasesdedatos.dataservice.SQLiteHelper;
 
@@ -14,35 +17,23 @@ public class MainActivityPaisListar extends AppCompatActivity {
     TextView listaPaises;
     SQLiteHelper sqLiteHelper;
 
+    int numeroRecibido;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_pais_listar);
 
+        numeroRecibido = getIntent().getIntExtra("numeroParametro", -1);
+
         listaPaises = findViewById(R.id.listaPais);
-        sqLiteHelper = new SQLiteHelper(this, 1);
+    }
 
-        Cursor cursor = sqLiteHelper.obtenerTodosLosPaises();
+    public void onPulsameRegresar(View view) {
+        Intent i = new Intent(this, MainActivity_Tablas.class);
 
-        if (cursor != null && cursor.moveToFirst()) {
-            int nombreIndex = cursor.getColumnIndex("nombre");
+        i.putExtra("numeroParametro", numeroRecibido);
 
-            if (nombreIndex != -1) {
-                StringBuilder stringBuilder = new StringBuilder();
-                do {
-                    String nombrePais = cursor.getString(nombreIndex);
-                    stringBuilder.append(nombrePais).append("\n");
-                } while (cursor.moveToNext());
-
-                // Muestra la información en el TextView
-                listaPaises.setText(stringBuilder.toString());
-
-                // Cierra el cursor después de usarlo
-                cursor.close();
-            } else {
-                // Manejo si no hay países
-                listaPaises.setText("No hay países para mostrar.");
-            }
-        }
+        startActivity(i);
     }
 }

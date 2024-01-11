@@ -2,7 +2,9 @@ package dm2e.cesar.practicabasesdedatos.activitiespais;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,9 +12,11 @@ import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import dm2e.cesar.practicabasesdedatos.MainActivity_Tablas;
 import dm2e.cesar.practicabasesdedatos.R;
+import dm2e.cesar.practicabasesdedatos.dataservice.SQLiteHelper;
 
 public class MainActivityPaisInsertarActualizar extends AppCompatActivity {
 
@@ -50,13 +54,98 @@ public class MainActivityPaisInsertarActualizar extends AppCompatActivity {
                     break;
             }
         }
+
+        accionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (numeroRecibido == 0) {
+                    insertarPais();
+                } else {
+                    actualizarPais();
+                }
+            }
+        });
     }
 
     public void onPulsameRegresar(View view) {
         Intent i = new Intent(this, MainActivity_Tablas.class);
-
         i.putExtra("numeroParametro", numeroRecibido);
-
         startActivity(i);
+    }
+
+    public void insertarPais (){
+        SQLiteHelper sqLiteHelper = new SQLiteHelper(this, "PruebaBasesDatos", null,1);
+        try(SQLiteDatabase baseDeDatos = sqLiteHelper.getWritableDatabase()){
+            String idPais = paisId.getText().toString();
+            int id = 0;
+
+            try {
+                id = Integer.parseInt(idPais);
+            } catch (NumberFormatException e){
+                Toast.makeText(this, "ID del Pais no valido", Toast.LENGTH_LONG).show();
+            }
+
+            String nombrePais = paisNombre.getText().toString();
+
+            if (!idPais.isEmpty() && !nombrePais.isEmpty()){
+
+                ContentValues registro = new ContentValues();
+
+                registro.put("paisId", id);
+                registro.put("nombre", nombrePais);
+
+                baseDeDatos.insert("Pais", null, registro);
+
+                paisId.setText("");
+                paisNombre.setText("");
+
+                Toast.makeText(this, "Registro Exitoso", Toast.LENGTH_LONG).show();
+
+            } else {
+                Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Error al abrir la base de datos", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void actualizarPais(){
+        SQLiteHelper sqLiteHelper = new SQLiteHelper(this, "PruebaBasesDatos", null,1);
+        try(SQLiteDatabase baseDeDatos = sqLiteHelper.getWritableDatabase()){
+            String idPais = paisId.getText().toString();
+            int id = 0;
+
+            try {
+                id = Integer.parseInt(idPais);
+            } catch (NumberFormatException e){
+                Toast.makeText(this, "ID del Pais no valido", Toast.LENGTH_LONG).show();
+            }
+
+            String nombrePais = paisNombre.getText().toString();
+
+            if (!idPais.isEmpty() && !nombrePais.isEmpty()){
+
+                ContentValues registro = new ContentValues();
+
+                registro.put("paisId", id);
+                registro.put("nombre", nombrePais);
+
+                int cantidad = baseDeDatos.update("Pais", registro, "paisId=" + id, null);
+
+                paisId.setText("");
+                paisNombre.setText("");
+
+                if (cantidad == 1){
+                    Toast.makeText(this, "Pais Actualizado", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(this, "Debes llenar todos  los campos", Toast.LENGTH_LONG).show();
+                }
+
+            } else {
+                Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Error al abrir la base de datos", Toast.LENGTH_LONG).show();
+        }
     }
 }

@@ -32,8 +32,10 @@
     <string name="textoActuUsuario">¿Que usuario quieres actualizar?</string>
     <string name="textoInserUsuario">¿Que usuario quieres insertar?</string>
     <string name="textoBorrarUsuario">¿Que usuario quieres borrar?</string>
+    <string name="idUsuarioBuscar">Inserte el Id del usuario a buscar</string>
     
     <string name="idUsuario">Inserte el Id del Usuario (numero)</string>
+    <string name="idUsuarioActu">Inserte el Id del Usuario que quieres Actualizar (Numero)</string>
     <string name="nombreUsuario">Inserte el nombre del Usuario (string)</string>
     <string name="apellidoUsuario">Inserte el apellido del Usuario (string)</string>
     <string name="nombreAPPUsuario">Inserte el nombre en la aplicación del Usuario (string)</string>
@@ -76,7 +78,8 @@
     <string name="textoInsertCodeIsoPais">¿Que valor quieres insertar en la tabla CodeIsoPais?</string>
     <string name="textoBorrarCodeIsoPais">¿Que valor quieres borrar en la tabla CodeIsoPais?</string>
 
-    <string name="idCodeIsoPais">Inserte el Id del Codigo Iso del Pais (numero)</string>
+    <string name="codeIsoNombre">Inserte el Nombre del CodigoIso del Pais (String)</string>
+    <string name="idCodeIsoPais">Inserte el Id del Codigo Iso del Pais (numeric)</string>
 
     <string name="botonVolver">Regresar</string>
 

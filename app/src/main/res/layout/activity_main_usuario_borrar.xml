@@ -56,7 +56,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textSize="30dp"
-                android:text="@string/borrar"/>
+                android:text="@string/borrar"
+                android:onClick="eliminarUsuario"/>
         </TableRow>
 
     </TableLayout>

@@ -21,11 +21,19 @@
         android:hint="@string/idCodeIsoPais"/>
 
     <EditText
+        android:layout_below="@id/idCodeIsoPais"
+        android:id="@+id/codeIsoPaisNombre"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/codeIsoNombre"/>
+
+    <EditText
         android:id="@+id/idPais"
         android:layout_marginTop="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idCodeIsoPais"
+        android:layout_below="@id/codeIsoPaisNombre"
         android:hint="@string/idPais"/>
 
     <TextView
