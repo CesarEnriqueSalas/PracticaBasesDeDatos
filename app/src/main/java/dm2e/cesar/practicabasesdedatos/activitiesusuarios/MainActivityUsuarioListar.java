@@ -41,12 +41,6 @@ public class MainActivityUsuarioListar extends AppCompatActivity {
         usuarioBuscar = findViewById(R.id.usuarioBuscar);
         mostar = findViewById(R.id.accion);
 
-        mostar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostarUsuario();
-            }
-        });
     }
 
     public void onPulsameRegresar(View view) {
@@ -71,23 +65,25 @@ public class MainActivityUsuarioListar extends AppCompatActivity {
                     Toast.makeText(this, "Error, el Id del Usuario es invalido", Toast.LENGTH_LONG).show();
                 }
 
-                Cursor fila = baseDeDatos.rawQuery("select usuarioId, nombre, apellido, usuario, email, codigoIsoPais "
-                        + "from Usuario where usuarioId =" + id, null);
+                String[] campos = new String[]{"usuarioId", "nombre", "apellido", "usuario", "email", "codigoIsoPais"};
+                String[] args = new String[]{codigo};
+
+                Cursor fila = baseDeDatos.query("Usuario", campos, "usuarioId=?", args, null, null, null);
 
                 if (fila.moveToFirst()) {
+                    do{
+                        int userId = fila.getInt(0);
+                        String name = fila.getString(1);
+                        String apellido = fila.getString(2);
+                        String user = fila.getString(3);
+                        String email = fila.getString(4);
+                        String codeIso = fila.getString(5);
 
-                    int idUser = fila.getInt(0);
-                    String nomUser = fila.getString(1);
-                    String apellUser = fila.getString(2);
-                    String user = fila.getString(3);
-                    String email = fila.getString(4);
-                    String codeIso = fila.getString(5);
+                        String e = String.valueOf(userId);
 
-                    usuarioBuscar.setText("");
+                        listaUsuario.setText(e + name + apellido + user + email + codeIso);
 
-                    Usuario usuario = new Usuario(idUser, nomUser, apellUser, user, email, codeIso);
-
-                    listaUsuario.setText(usuario.toString());
+                    }while (fila.moveToNext());
                 }
             } else {
                 Toast.makeText(this, "Llena los campos", Toast.LENGTH_LONG).show();
@@ -95,8 +91,5 @@ public class MainActivityUsuarioListar extends AppCompatActivity {
         } catch (Exception e){
             Toast.makeText(this, "Error al acceder en la base de datos", Toast.LENGTH_LONG).show();
         }
-
     }
-
-
 }
