@@ -1,12 +1,12 @@
 package dm2e.cesar.practicabasesdedatos.activitiescodeisopais;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import dm2e.cesar.practicabasesdedatos.MainActivity_Tablas;
 import dm2e.cesar.practicabasesdedatos.R;
@@ -14,8 +14,9 @@ import dm2e.cesar.practicabasesdedatos.dataservice.SQLiteHelper;
 
 public class MainActivityCodeIsoPaisListar extends AppCompatActivity {
 
-    TextView listaCodeIsoPais;
-    SQLiteHelper sqLiteHelper;
+    private RecyclerView recyclerView;
+
+    private CodeIsoAdaptador codeIsoAdaptador;
 
     int numeroRecibido;
 
@@ -26,7 +27,12 @@ public class MainActivityCodeIsoPaisListar extends AppCompatActivity {
 
         numeroRecibido = getIntent().getIntExtra("numeroParametro", -1);
 
-        listaCodeIsoPais = findViewById(R.id.listaCodeIsoPais);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        SQLiteHelper sqLiteHelper = new SQLiteHelper(getApplicationContext(), "PruebaBasesDatos", null,1);
+        codeIsoAdaptador = new CodeIsoAdaptador(sqLiteHelper.obtenerDatosCodeIsoPais());
+        recyclerView.setAdapter(codeIsoAdaptador);
 
     }
 

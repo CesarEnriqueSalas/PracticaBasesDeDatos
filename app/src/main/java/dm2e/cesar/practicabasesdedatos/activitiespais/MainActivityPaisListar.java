@@ -1,12 +1,12 @@
 package dm2e.cesar.practicabasesdedatos.activitiespais;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import dm2e.cesar.practicabasesdedatos.MainActivity_Tablas;
 import dm2e.cesar.practicabasesdedatos.R;
@@ -14,9 +14,8 @@ import dm2e.cesar.practicabasesdedatos.dataservice.SQLiteHelper;
 
 public class MainActivityPaisListar extends AppCompatActivity {
 
-    TextView listaPaises;
-    SQLiteHelper sqLiteHelper;
-
+    private RecyclerView recyclerView;
+    private PaisAdaptador paisAdaptador;
     int numeroRecibido;
 
     @Override
@@ -26,7 +25,13 @@ public class MainActivityPaisListar extends AppCompatActivity {
 
         numeroRecibido = getIntent().getIntExtra("numeroParametro", -1);
 
-        listaPaises = findViewById(R.id.listaPais);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        SQLiteHelper sqLiteHelper = new SQLiteHelper(getApplicationContext(), "PruebaBasesDatos", null,1);
+        paisAdaptador = new PaisAdaptador(sqLiteHelper.obtenerDatosPais());
+        recyclerView.setAdapter(paisAdaptador);
+
     }
 
     public void onPulsameRegresar(View view) {
@@ -36,4 +41,6 @@ public class MainActivityPaisListar extends AppCompatActivity {
 
         startActivity(i);
     }
+
+
 }

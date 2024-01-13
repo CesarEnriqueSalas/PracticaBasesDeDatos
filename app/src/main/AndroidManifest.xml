@@ -49,60 +49,11 @@
             android:name=".activitiesusuarios.MainActivityUsuarioInsertarActualizar"
             android:exported="false" />
         <activity
-            android:name=".activitylistar.MainActivity_Tablas"
-            android:exported="false" />
-        <activity
-            android:name=".activityborrar.MainActivity_Borrar"
-            android:exported="false" />
-        <activity
-            android:name=".activityactualizar.MainActivity_Actualizar"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity_Tablas"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Insertar"
-            android:exported="true"
-            android:label="@string/ventanaInsert">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Actualizar"
-            android:exported="true"
-            android:label="@string/ventanaActualizar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Borrar"
-            android:exported="true"
-            android:label="@string/ventanaBorrar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".Listar"
-            android:exported="true"
-            android:label="@string/ventanaListar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,6 +1,8 @@
 package dm2e.cesar.practicabasesdedatos.activitiesciudad;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,8 +16,9 @@ import dm2e.cesar.practicabasesdedatos.dataservice.SQLiteHelper;
 
 public class MainActivityCiudadListar extends AppCompatActivity {
 
-    TextView listaCiudades;
-    SQLiteHelper sqLiteHelper;
+    private RecyclerView recyclerView;
+
+    private CiudadAdaptador ciudadAdaptador;
 
     int numeroRecibido;
 
@@ -26,7 +29,12 @@ public class MainActivityCiudadListar extends AppCompatActivity {
 
         numeroRecibido = getIntent().getIntExtra("numeroParametro", -1);
 
-        listaCiudades = findViewById(R.id.listaCiudades);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        SQLiteHelper sqLiteHelper = new SQLiteHelper(getApplicationContext(), "PruebaBasesDatos", null,1);
+        ciudadAdaptador = new CiudadAdaptador(sqLiteHelper.obtenerDatosCiudad());
+        recyclerView.setAdapter(ciudadAdaptador);
 
     }
 
