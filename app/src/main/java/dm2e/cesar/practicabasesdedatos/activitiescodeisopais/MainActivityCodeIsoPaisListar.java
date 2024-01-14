@@ -31,9 +31,9 @@ public class MainActivityCodeIsoPaisListar extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         SQLiteHelper sqLiteHelper = new SQLiteHelper(getApplicationContext(), "PruebaBasesDatos", null,1);
-        codeIsoAdaptador = new CodeIsoAdaptador(sqLiteHelper.obtenerDatosCodeIsoPais());
+        codeIsoAdaptador =  new CodeIsoAdaptador(sqLiteHelper.obtenerDatosCodeIso());
         recyclerView.setAdapter(codeIsoAdaptador);
-
+        sqLiteHelper.close();
     }
 
     public void onPulsameRegresar(View view) {

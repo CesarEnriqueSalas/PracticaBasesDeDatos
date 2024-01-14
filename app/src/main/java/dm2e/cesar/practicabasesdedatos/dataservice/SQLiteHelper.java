@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     String sqlCreateUserTable = "CREATE TABLE Usuario (usuarioId INTEGER PRIMARY KEY, nombre TEXT, apellido TEXT, usuario TEXT ,email TEXT, " +
             "codigoIsoPais TEXT)";
-    String sqlCreateCodeIsoPaisTable = "CREATE TABLE CodeIsoPais (codeID INTEGER PRIMARY KEY, codigoIsoPais TEXT, paisId INTEGER)";
+    String sqlCreateCodeIsoPaisTable = "CREATE TABLE CodeIsoPais (codeID INTEGER PRIMARY KEY, codigoIsoPais TEXT, paisId NUMERIC)";
     String sqlCreatePaisTable = "CREATE TABLE Pais (paisId INTEGER PRIMARY KEY, nombre TEXT)";
     String sqlCreateCiudadTable = "CREATE TABLE Ciudad (ciudadId NUMERIC PRIMARY KEY, nombre TEXT, paisId NUMERIC)";
 
@@ -48,6 +49,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                         cursor.getString(3), cursor.getString(4), cursor.getString(5)));
             }while (cursor.moveToNext());
         }
+        cursor.close();
         return usuarios;
     }
 
@@ -60,6 +62,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 paises.add(new Pais(cursor.getInt(0), cursor.getString(1)));
             }while (cursor.moveToNext());
         }
+        cursor.close();
         return paises;
     }
 
@@ -72,19 +75,25 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 ciudades.add(new Ciudad(cursor.getInt(0), cursor.getString(1), cursor.getInt(2)));
             }while (cursor.moveToNext());
         }
+        cursor.close();
         return ciudades;
     }
 
-    public List<CodeIsoPais> obtenerDatosCodeIsoPais(){
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM CodeIsoPais", null);
-        List<CodeIsoPais> codeIsoPaisList = new ArrayList<>();
-        if (cursor.moveToFirst()){
-            do {
-                codeIsoPaisList.add(new CodeIsoPais(cursor.getInt(0), cursor.getString(1), cursor.getInt(2)));
-            }while (cursor.moveToNext());
-        }
-        return codeIsoPaisList;
-    }
+   public List<CodeIsoPais> obtenerDatosCodeIso() {
+       SQLiteDatabase db = getReadableDatabase();
+       List<CodeIsoPais> codeIsoPaises = null;
+       try {
+           Cursor cursor = db.rawQuery("SELECT * FROM CODEISOPAIS", null);
+           codeIsoPaises = new ArrayList<>();
+           if (cursor.moveToFirst()) {
+               do {
+                   codeIsoPaises.add(new CodeIsoPais(cursor.getInt(0), cursor.getString(1), cursor.getInt(2)));
+               } while (cursor.moveToNext());
+           }
+       } catch (Exception e) {
+           e.printStackTrace();
+       }
+       return codeIsoPaises;
+   }
 
 }
