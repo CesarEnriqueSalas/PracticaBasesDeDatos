@@ -53,4 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(i);
     }
+
+    public void onPulsameListarTodas(View view){
+        Intent i = new Intent(this, MainActivity_TodosDatos.class);
+        startActivity(i);
+    }
 }

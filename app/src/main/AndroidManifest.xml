@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PracticaBasesDeDatos"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity_TodosDatos"
+            android:exported="false" />
+        <activity
             android:name=".activitiespais.MainActivityPaisListar"
             android:exported="false" />
         <activity

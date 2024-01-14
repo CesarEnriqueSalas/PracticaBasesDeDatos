@@ -33,7 +33,7 @@
     <string name="textoInserUsuario">¿Que usuario quieres insertar?</string>
     <string name="textoBorrarUsuario">¿Que usuario quieres borrar?</string>
     <string name="idUsuarioBuscar">Inserte el Id del usuario a buscar</string>
-    
+
     <string name="idUsuario">Inserte el Id del Usuario (numero)</string>
     <string name="idUsuarioActu">Inserte el Id del Usuario que quieres Actualizar (Numero)</string>
     <string name="nombreUsuario">Inserte el nombre del Usuario (string)</string>
@@ -41,7 +41,7 @@
     <string name="nombreAPPUsuario">Inserte el nombre en la aplicación del Usuario (string)</string>
     <string name="emailUsuario">Inserte el email del Usuario (string)</string>
     <string name="codigoIsoUsuario">Inserte el codeIso del pais del Usuario (string)</string>
-    
+
     <!--Texto Tabla Pais-->
     <string name="textoTablaPaisInsertar">Datos a insetar en la Tabla Pais</string>
     <string name="textoTablaPaisActualizar">Datos actualizables en la Tabla Pais</string>

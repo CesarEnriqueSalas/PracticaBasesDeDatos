@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_TodosDatos">
+
+    <TextView
+        android:id="@+id/textoListar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listando todas las Tablas"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textoListar"
+        android:text="Usuario"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:gravity="center_horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/user"
+        android:id="@+id/recyclerViewUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        tools:listitem="@layout/item_list_recycler"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/pais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerViewUsuario"
+        android:text="Pais"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:gravity="center_horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/pais"
+        android:id="@+id/recyclerViewPais"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        tools:listitem="@layout/item_list_recycler_pais"
+        android:layout_margin="10dp"/>
+
+    <TextView
+        android:id="@+id/ciudad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recyclerViewPais"
+        android:text="Ciudad"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:gravity="center_horizontal" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/ciudad"
+        android:id="@+id/recyclerViewCiudad"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        tools:listitem="@layout/item_list_recycler_ciudad"
+        android:layout_above="@id/layout"
+        android:layout_margin="10dp"/>
+
+    <TableLayout
+        android:id="@+id/layout"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/Regresar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onPulsameRegresar"
+                android:text="@string/botonVolver"
+                android:textSize="30dp" />
+        </TableRow>
+
+    </TableLayout>
+
+</RelativeLayout>
